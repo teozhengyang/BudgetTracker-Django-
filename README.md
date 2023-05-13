@@ -1,0 +1,18 @@
+# CS50W Capstone #
+
+## Distinctiveness and Complexity ##
+
+My project is a budget tracker that helps users track their income, spending, savings and investments. For the investment tracking, live prices are quoted from the API from IEX Cloud to provide users current prices every time they refresh the web page. Apart from the tracking, a goals section and calculator are provided for the users. Users can set goals they wish to achieve and the application will track the progress of the goals and update the progress whenever there are changes made to the different accounts of the users. Both uses mainly JavaScript and the goals section is similar to a simple single page application. A simple API was created for the goals section as well. Therefore, this idea of a budget tracker is different to the previous projects such as e-commerce site and social network. Moreover, I combined everything that I have learnt from the past weeks of lessons together to create the application. Hence, the difficulty level of creating this budget tracker is much higher compared to the previous project.
+
+## Folders & Files ##
+
+The project has only one application named 'finance'. Under the 'finance' application folder, there are other folders and files like 'statics', 'templates', 'admin.py', 'models.py', 'urls.py' and 'views.py'. The 'statics' folder contains the JavaScript (stored in the file 'finance.js') used at the goals section and calculator and CSS (stored in the file 'styles.css') for the web pages. The file 'finance.js' also stores the code that allows user to edit or delete any goals without refreshing the page. The 'templates' folder contains the HTML of the webpages where 2 different layouts: 'layout.html' and 'investmentlayout.html' are used. All the webpages have access to the Bootstrap library where some designs of the webpages are taken from. Most webpages with tables in their HTML will have an additional section taken from 'paginator.html' which help split the table into different pages and prevent really long pages. The 'admin.py' and 'models.py' files contain the models used eg transactions, goals, user and how they are displayed at the admin interface. The 'urls.py' and 'views.py' are files that show how the application will run. The 'urls.py' contains the various urls of the webpage and the function in the 'views.py' that should run whenever the url is accessed by the user using different request types. The 'db.sqlite3' at the main directory shows that sqlite3 is used to store any information users have inputted into the application.
+
+## How to Run Application ##
+
+To run the application, one can simply download the project folder. Using any relevant applications, open the folder and run the 'cd capstone' command at the terminal to access the project 'capstone' directory. From there, run 'python3 manage.py runserver' or 'python manage.py runserver' and follow the instructions at the terminal to access the application.
+
+## Additional Information ##
+
+This is a rather a simple web application and more could have been done to make the application better. For example, using an API to track any investment products in the world could have been a better choice than using one that tracks mainly investment products in the US. The designs of the webpages might be rather simple compared to webpages of other applications. However, I would like to keep it that way as I enjoy simple web applications. I also researched online about how to create certain functions and hence some functions within my project may look similar to those that could be found online.
+ 

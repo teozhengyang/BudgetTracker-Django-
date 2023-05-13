@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+/* calculator CSS */
+#calccontainer {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 50px;
+}
+
+#calcdisplay {
+    text-align: right;
+    height: 70px;
+    padding: 16px 8px;
+    font-size: 25px;
+    border: 1px solid rgb(45, 44, 44);
+}
+
+#calcbuttons {
+    display: grid;
+    border-bottom: 1px solid rgb(45, 44, 44);
+    border-left: 1px solid rgb(45, 44, 44);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#calcbuttons > div {
+    border-top: 1px solid rgb(45, 44, 44);
+    border-right: 1px solid rgb(45, 44, 44);
+}
+
+.calcbutton {
+    border: 0.5px solid black;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.calcbutton:hover {
+    background-color: #323330;
+    color: white;
+}
+
+#calcequal {
+    background-color: rgb(51, 51, 249);
+    color: white;
+}
+
+/* header of each page */
+.pageheader {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* if second header present in same page */
+.doublepageheader {
+    margin-top: 20px;
+}
+
+/* content of each page under header */
+.pagecontent {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* net worth table in index page */
+#networthtable td {
+    height: 75px;
+}
+
+#networthsummary {
+    border-top: 1px solid black;
+}
+
+.networthcomponent {
+    text-align: left;
+}
+
+.networthamount {
+    text-align: right;
+}
+
+/* recent transactions table in index page */
+#recenttransactionstable {
+    width: 60%;
+}
+
+#recenttransactionstable th {
+    height: 30px;
+    border: 1px solid black;
+}
+
+#recenttransactionstable td {
+    height: 30px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#viewtransactionsbutton {
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+/* add transaction input field */
+.addtransactionfield {
+    text-align: left;
+}
+
+.addtransactiontable {
+    margin-left: 35%;
+    margin-top: 30px;
+}
+
+.addtransactiontable td {
+    padding-top: 10px;
+}
+
+.addtransactionaccount {
+    padding-bottom: 40px;
+}
+
+/* goals table */
+#goalstable {
+    width: 60%;
+}
+
+#goalstable th {
+    height: 30px;
+    border: 1px solid black;
+}
+
+#goalstable td {
+    height: 30px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* pagination navigation bar */
+.paginationnavbar {
+    margin-left: 42.5%;
+    margin-top: 20px;
+}
+
+/* all transactions table */
+#transactionstable {
+    width: 60%;
+}
+
+#transactionstable th {
+    height: 30px;
+    border: 1px solid black;
+}
+
+#transactionstable td {
+    height: 30px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* investment portfolio table */
+#portfoliotable {
+    width: 60%;
+}
+
+#portfoliotable th {
+    height: 30px;
+    border: 1px solid black;
+}
+
+#portfoliotable td {
+    height: 30px;
+    border: 1px solid black;
+    padding: 10px; 
+}
+
+/* investment transactions table */
+#investmenttransactionstable {
+    width: 60%;
+}
+
+#investmenttransactionstable th {
+    height: 30px;
+    border: 1px solid black;
+}
+
+#investmenttransactionstable td {
+    height: 30px;
+    border: 1px solid black;
+    padding: 10px; 
+}

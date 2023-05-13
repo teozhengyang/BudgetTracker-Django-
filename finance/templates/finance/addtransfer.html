@@ -1,0 +1,33 @@
+{% extends "finance/layout.html" %}
+
+{% block title %}Finance: Add Transfer{% endblock %}
+
+{% block body %}
+    <div class="pageheader">
+        <h2><b>Add Transfer</b></h2>
+    </div> 
+    <form action="{% url 'addtransfer' %}" method="POST">
+        {% csrf_token %} 
+        <table class="pagecontent addtransactiontable">
+            <tr>       
+                <td class="addtransactionaccount">{{ form.source.label }}:</td>
+                <td class="addtransactionfield addtransactionaccount">{{ form.source }}</td>
+            </tr>
+            <tr>       
+                <td class="addtransactionaccount">{{ form.destination.label }}:</td>
+                <td class="addtransactionfield addtransactionaccount">{{ form.destination }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.amount.label }}:</td>
+                <td class="addtransactionfield">{{ form.amount }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.description.label }}:</td>
+                <td class="addtransactionfield">{{ form.description }}</td>
+            </tr>
+        </table>
+        <div class="pagecontent">
+            <input class="btn btn-primary btn-sm" type="submit" value="Add Transfer">
+        </div>
+    </form>
+{% endblock %}

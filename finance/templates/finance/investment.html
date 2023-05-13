@@ -1,0 +1,51 @@
+{% extends "finance/investmentlayout.html" %}
+
+{% block title %}Finance: Investment Portfolio{% endblock %}
+
+{% block body %}
+    <div class="pageheader">
+        <h2><b>Portfolio</b></h2>
+    </div>
+    {% if portfolio %}
+    <table class="pagecontent" id="portfoliotable">
+        <tr>
+            <th>Product Symbol</th>
+            <th>Number</th>
+            <th>Amount Spent</th>
+            <th>Current Value</th>
+        </tr>
+        {% for product in portfolio %}
+        <tr>
+            <td>{{ product.symbol }}</td>
+            <td>{{ product.number }}</td>
+            <td>${{ product.amount }}</td>
+            <td>${{ product.total_value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <div class="pageheader doublepageheader">
+        <h4><b>Transactions</b></h4>
+    </div>
+    {% if page_obj %}
+    <table class="pagecontent" id="investmenttransactionstable">
+        <tr>
+            <th>Type</th>
+            <th>Account</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for transaction in page_obj %}
+        <tr>
+            <td>{{ transaction.type }}</td>
+            <td>{{ transaction.account }}</td>
+            <td>${{ transaction.amount }}</td>
+            <td>{{ transaction.description }}</td>
+            <td>{{ transaction.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% include "finance/paginator.html" %}
+    {% endif %}
+{% endblock %}

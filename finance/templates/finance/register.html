@@ -1,0 +1,33 @@
+{% extends "finance/layout.html" %}
+
+{% block title %}Finance: Register{% endblock %}
+
+{% block body %}
+    <div class="pageheader">
+        <h2><b>Register</b></h2>
+    </div> 
+    <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %} 
+        <table class="pagecontent addtransactiontable">
+            <tr>
+                <td>{{ form.username.label }}:</td>
+                <td class="addtransactionfield">{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.email.label }}:</td>
+                <td class="addtransactionfield">{{ form.email }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label }}:</td>
+                <td class="addtransactionfield">{{ form.password }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.confirm_password.label }}:</td>
+                <td class="addtransactionfield">{{ form.confirm_password }}</td>
+            </tr>
+        </table>
+        <div class="pagecontent">
+            <input class="btn btn-primary btn-sm" type="submit" value="Register">
+        </div>
+    </form>
+{% endblock %}

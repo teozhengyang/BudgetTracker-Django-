@@ -1,0 +1,25 @@
+{% extends "finance/layout.html" %}
+
+{% block title %}Finance: Login{% endblock %}
+
+{% block body %}
+    <div class="pageheader">
+        <h2><b>Login</b></h2>
+    </div> 
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %} 
+        <table class="pagecontent addtransactiontable">
+            <tr>
+                <td>{{ form.username.label }}:</td>
+                <td class="addtransactionfield">{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label }}:</td>
+                <td class="addtransactionfield">{{ form.password }}</td>
+            </tr>
+        </table>
+        <div class="pagecontent">
+            <input class="btn btn-primary btn-sm" type="submit" value="Login">
+        </div>
+    </form>
+{% endblock %}

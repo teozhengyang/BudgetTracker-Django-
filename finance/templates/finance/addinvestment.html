@@ -1,0 +1,33 @@
+{% extends "finance/investmentlayout.html" %}
+
+{% block title %}Finance: Add Investment{% endblock %}
+
+{% block body %}
+    <div class="pageheader">
+        <h2><b>Add Investment</b></h2>
+    </div> 
+    <form action="{% url 'addinvestment' %}" method="POST">
+        {% csrf_token %} 
+        <table class="pagecontent addtransactiontable">
+            <tr>       
+                <td class="addtransactionaccount">{{ form.account.label }}:</td>
+                <td class="addtransactionfield addtransactionaccount">{{ form.account }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.symbol.label }}:</td>
+                <td class="addtransactionfield">{{ form.symbol }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.number.label }}:</td>
+                <td class="addtransactionfield">{{ form.number }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.amount.label }}:</td>
+                <td class="addtransactionfield">{{ form.amount }}</td>
+            </tr>
+        </table>
+        <div class="pagecontent">
+            <input class="btn btn-primary btn-sm" type="submit" value="Add Investment">
+        </div>
+    </form>
+{% endblock %}

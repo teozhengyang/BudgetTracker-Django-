@@ -1,0 +1,29 @@
+{% extends "finance/layout.html" %}
+
+{% block title %}Finance: Add Expense{% endblock %}
+
+{% block body %}
+    <div class="pageheader">
+        <h2><b>Add Expense</b></h2>
+    </div> 
+    <form action="{% url 'addexpense' %}" method="POST">
+        {% csrf_token %} 
+        <table class="pagecontent addtransactiontable">
+            <tr>       
+                <td class="addtransactionaccount">{{ form.account.label }}:</td>
+                <td class="addtransactionfield addtransactionaccount">{{ form.account }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.amount.label }}:</td>
+                <td class="addtransactionfield">{{ form.amount }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.description.label }}:</td>
+                <td class="addtransactionfield">{{ form.description }}</td>
+            </tr>
+        </table>
+        <div class="pagecontent">
+            <input class="btn btn-primary btn-sm" type="submit" value="Add Expense">
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "finance/layout.html" %}
+
+{% block title %}Finance: Home{% endblock %}
+
+{% block body %}
+    <div class="pageheader">
+        <h2><b>Net Worth</b></h2>
+    </div>
+    <table class="pagecontent" id="networthtable">
+        <tr>
+            <td class="networthcomponent"><b>Budget</b></td>
+            <td class="networthamount">${{ user.budget }}</td>
+        </tr>
+        <tr>
+            <td class="networthcomponent"><b>Savings</b></td>
+            <td class="networthamount">${{ user.savings }}</td>
+        </tr>
+        <tr>
+            <td class="networthcomponent"><b>Investment</b></td>
+            <td class="networthamount">${{ user.investment }}</td>
+        </tr>
+        <tr id="networthsummary">
+            <td class="networthcomponent"><b>Net Worth</b></td>
+            <td class="networthamount">${{ user.net_worth }}</td>
+        </tr>
+    </table>
+    <div class="pageheader doublepageheader">
+        <h2><b>Recent Transactions</b></h2>
+    </div>
+    {% if transactions %}
+    <table class="pagecontent" id="recenttransactionstable">
+        <tr>
+            <th>Type</th>
+            <th>Account(s)</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.type }}</td>
+            <td>{{ transaction.account }}</td>
+            <td>${{ transaction.amount }}</td>
+            <td>{{ transaction.description }}</td>
+            <td>{{ transaction.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <form action="{% url 'transactions' %}" method="GET" class="pagecontent" id="viewtransactionsbutton">
+        <input class="btn btn-primary btn-sm" type="submit" value="View All Transactions">
+    </form>
+{% endblock %}

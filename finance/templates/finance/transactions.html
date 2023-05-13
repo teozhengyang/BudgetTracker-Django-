@@ -1,0 +1,30 @@
+{% extends "finance/layout.html" %}
+
+{% block title %}Finance: All Transactions{% endblock %}
+
+{% block body %}
+    <div class="pageheader">
+        <h2><b>All Transactions</b></h2>
+    </div>
+    {% if page_obj %}
+    <table class="pagecontent" id="transactionstable">
+        <tr>
+            <th>Type</th>
+            <th>Account(s)</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for transaction in page_obj %}
+        <tr>
+            <td>{{ transaction.type }}</td>
+            <td>{{ transaction.account }}</td>
+            <td>${{ transaction.amount }}</td>
+            <td>{{ transaction.description }}</td>
+            <td>{{ transaction.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% include "finance/paginator.html" %}
+    {% endif %}
+{% endblock %}
